@@ -1,0 +1,118 @@
+
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+  
+  body {
+    overflow-x: hidden;
+    background: #fdf8ff;
+  }
+
+
+  .main .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .main .card {
+    color: #252a32;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.24);
+  }
+  .main .card-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 70%;
+    border-radius: 10px !important;
+    background: #ffffff;
+  }
+  .main .card-image img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px !important;
+    width: 100%;
+    filter: grayscale(1);
+    height: 100%;
+    object-fit: cover;
+    transition:.4s;
+  }
+
+  .main .card-image img:hover {
+    filter: grayscale(0);
+    transition:.4s;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .main .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+    }
+  }
+
+
+
+
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.carousel-control {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  /* Estilos para dispositivos com largura menor que 768px */
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+ 
+}
+
+.group:focus .group-focus\:flex {
+display: flex;
+}
+
