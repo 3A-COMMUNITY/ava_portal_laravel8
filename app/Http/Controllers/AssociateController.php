@@ -43,14 +43,14 @@ class AssociateController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            //  'name' => 'required',
-             'date_birth' => 'required|date|before_or_equal:today',
-            //  'n_bi' => 'required',
-            //  'email' => 'required',
-            //  'adress' => 'required',
-            //  'phone' => 'required',
-            //  'areas_afectadas' => 'required',
-            //  'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'name' => 'required',
+            'date_birth' => 'required|date|before_or_equal:today',
+            'n_bi' => 'required|unique:associates',
+            'email' => 'required|unique:associates|email|max:255',
+            'adress' => 'required',
+            'phone' => 'required',
+            'areas_afectadas' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
          ]);
   
         $input = $request->all();
@@ -63,10 +63,13 @@ class AssociateController extends Controller
         }
     
         
-        Associate::create($input);
-        
+        if(Associate::create($input)){
         Alert::success('Cadastrado com Sucesso', 'Entraremos em contacto em breve!');
         return redirect()->back();
+        }else{
+            Alert::error('Erro ao cadastrar', 'Por favor, insira os dados novamente.');
+            return redirect()->back();
+        }
     }
 
     public function status($id){

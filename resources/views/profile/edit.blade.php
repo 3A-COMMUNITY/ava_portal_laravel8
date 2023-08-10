@@ -1,44 +1,45 @@
 @extends('layouts.app', [
-    'class' => '',
-    'elementActive' => 'profile'
+'class' => '',
+'elementActive' => 'profile'
 ])
 
 @section('content')
-    <div class="content">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
-        @if (session('password_status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('password_status') }}
-            </div>
-        @endif
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-user">
-                    <div class="image">
-                        <!-- <img src="{{ asset('paper/img/damir-bosnjak.jpg') }}" alt="..."> -->
-                    </div>
-                    <div class="card-body">
-                        <div class="author">
-                            <a href="#">
-                                <img class="avatar border-gray" src="{{ asset('paper/img/default-avatar.png') }}" alt="...">
+@include('sweetalert::alert')
+<div class="content">
+	@if (session('status'))
+	<div class="alert alert-success" role="alert">
+		{{ session('status') }}
+	</div>
+	@endif
+	@if (session('password_status'))
+	<div class="alert alert-success" role="alert">
+		{{ session('password_status') }}
+	</div>
+	@endif
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card card-user">
+				<div class="image">
+					<!-- <img src="{{ asset('paper/img/damir-bosnjak.jpg') }}" alt="..."> -->
+				</div>
+				<div class="card-body">
+					<div class="author">
+						<a href="#">
+							<img class="avatar border-gray" src="{{ asset('paper/img/default-avatar.png') }}" alt="...">
 
-                                <h5 class="title">{{ __(auth()->user()->name)}}</h5>
-                            </a>
-                            <p class="description">
-                             {{ __(auth()->user()->email)}}
-                            </p>
-                        </div>
-                        <!-- <p class="description text-center">
+							<h5 class="title">{{ __(auth()->user()->name)}}</h5>
+						</a>
+						<p class="description">
+							{{ __(auth()->user()->email)}}
+						</p>
+					</div>
+					<!-- <p class="description text-center">
                             {{ __('I like the way you work it') }}
                             <br> {{ __('No diggity') }}
                             <br> {{ __('I wanna bag it up') }}
                         </p> -->
-                    </div>
-                    <!-- <div class="card-footer">
+				</div>
+				<!-- <div class="card-footer">
                         <hr>
                         <div class="button-container">
                             <div class="row">
@@ -63,183 +64,185 @@
                             </div>
                         </div>
                     </div> -->
-                </div>
-                <!-- <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">{{ __('Membros Administradores') }}</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled team-members">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-2 col-2">
-                                        <div class="avatar">
-                                            <img src="{{ asset('paper/img/faces/ayo-ogunseinde-2.jpg') }}" alt="Circle Image"
-                                                class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-7">
-                                        {{ __('DJ Khaled') }}
-                                        <br />
-                                        <span class="text-muted">
-                                            <small>{{ __('Offline') }}</small>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-3 col-3 text-right">
-                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i
-                                                class="fa fa-envelope"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-2 col-2">
-                                        <div class="avatar">
-                                            <img src="{{ asset('paper/img/faces/joe-gardner-2.jpg') }}" alt="Circle Image"
-                                                class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-7 col-7">
-                                            {{ __('Creative Tim') }}
-                                        <br />
-                                        <span class="text-success">
-                                            <small>{{ __('Available') }}</small>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-3 col-3 text-right">
-                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i
-                                                class="fa fa-envelope"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-2 col-2">
-                                        <div class="avatar">
-                                            <img src="{{ asset('paper/img/faces/clem-onojeghuo-2.jpg') }}" alt="Circle Image"
-                                                class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                    </div>
-                                    <div class="col-ms-7 col-7">
-                                        {{ __('Flume') }}
-                                        <br />
-                                        <span class="text-danger">
-                                            <small>{{ __('Busy') }}</small>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-3 col-3 text-right">
-                                        <button class="btn btn-sm btn-outline-success btn-round btn-icon"><i
-                                                class="fa fa-envelope"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
-            </div>
-            <div class="col-md-8 text-center">
-                <form class="col-md-12" action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="title">{{ __('Editar Perfil') }}</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{ __('Nome') }}</label>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Nome" value="{{ auth()->user()->name }}" required>
-                                    </div>
-                                    @if ($errors->has('name'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{ __('Email') }}</label>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Email" value="{{ auth()->user()->email }}" required>
-                                    </div>
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer ">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-round">{{ __('Salvar alterações') }}</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <form class="col-md-12" action="{{ route('profile.password') }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="title">{{ __('Mudar palavra-passe') }}</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{ __('Palavra-passe atual') }}</label>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="password" name="old_password" class="form-control" placeholder="Palavra-passe atual" required>
-                                    </div>
-                                    @if ($errors->has('old_password'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('old_password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{ __('Nova palavra-passe') }}</label>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="password" name="password" class="form-control" placeholder="Nova palavra-passe" required>
-                                    </div>
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="row">
-                                <label class="col-md-3 col-form-label">{{ __('Confirmar a nova palavra-passe') }}</label>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar a nova palavra-passe" required>
-                                    </div>
-                                    @if ($errors->has('password_confirmation'))
-                                        <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer ">
-                            <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-round">{{ __('Salvar Alterações') }}</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">{{ __('Membros Administradores') }}</h4>
+				</div>
+				<div class="card-body">
+					<ul class="list-unstyled team-members">
+						@foreach($Admins as $admin)
+						<li>
+							<div class="row">
+								<div class="col-md-2 col-2">
+									<div class="avatar">
+										<img src="{{ asset('paper/img/default-avatar.png') }}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+									</div>
+								</div>
+								<div class="col-md-7 col-7">
+									{{ $admin->name }}
+									<br />
+									<span class="text-muted">
+										<small>{{ $admin->email }}</small>
+									</span>
+								</div>
+								<div class="col-md-3 col-3 text-right">
+									<form action="{{ route('user.destroy',$admin->id) }}" method="POST">
+										@csrf
+										@method('DELETE')
+										<button type="submit" class="confirm btn btn-sm btn-outline-danger btn-round btn-icon" title="Eliminar" @if($admin->id == auth()->user()->id) disabled @endif ><i class="fa fa-trash"></i></button>
+									</form>
+
+								</div>
+							</div>
+						</li>
+						@endforeach
+					</ul>
+					<div class="">
+						<a href="{{ route('user.create') }}" class="btn btn-sm btn-outline-success btn-round btn-icon" title="Cadastrar Administradores"><i class="fa fa-plus"></i></a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8 text-center">
+			<form class="col-md-12" action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+				@csrf
+				@method('PUT')
+				<div class="card">
+					<div class="card-header">
+						<h5 class="title">{{ __('Editar Perfil') }}</h5>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<label class="col-md-3 col-form-label">{{ __('Nome') }}</label>
+							<div class="col-md-9">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control" placeholder="Nome" value="{{ auth()->user()->name }}" required>
+								</div>
+								@if ($errors->has('name'))
+								<span class="invalid-feedback" style="display: block;" role="alert">
+									<strong>{{ $errors->first('name') }}</strong>
+								</span>
+								@endif
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-md-3 col-form-label">{{ __('Email') }}</label>
+							<div class="col-md-9">
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" placeholder="Email" value="{{ auth()->user()->email }}" required>
+								</div>
+								@if ($errors->has('email'))
+								<span class="invalid-feedback" style="display: block;" role="alert">
+									<strong>{{ $errors->first('email') }}</strong>
+								</span>
+								@endif
+							</div>
+						</div>
+					</div>
+					<div class="card-footer ">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<button type="submit" class="btn btn-primary btn-round">{{ __('Salvar alterações') }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<form class="col-md-12" action="{{ route('profile.password') }}" method="POST">
+				@csrf
+				@method('PUT')
+				<div class="card">
+					<div class="card-header">
+						<h5 class="title">{{ __('Mudar palavra-passe') }}</h5>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<label class="col-md-3 col-form-label">{{ __('Palavra-passe atual') }}</label>
+							<div class="col-md-9">
+								<div class="form-group">
+									<input type="password" name="old_password" class="form-control" placeholder="Palavra-passe atual" required>
+								</div>
+								@if ($errors->has('old_password'))
+								<span class="invalid-feedback" style="display: block;" role="alert">
+									<strong>{{ $errors->first('old_password') }}</strong>
+								</span>
+								@endif
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-md-3 col-form-label">{{ __('Nova palavra-passe') }}</label>
+							<div class="col-md-9">
+								<div class="form-group">
+									<input type="password" name="password" class="form-control" placeholder="Nova palavra-passe" required>
+								</div>
+								@if ($errors->has('password'))
+								<span class="invalid-feedback" style="display: block;" role="alert">
+									<strong>{{ $errors->first('password') }}</strong>
+								</span>
+								@endif
+							</div>
+						</div>
+						<div class="row">
+							<label class="col-md-3 col-form-label">{{ __('Confirmar a nova palavra-passe') }}</label>
+							<div class="col-md-9">
+								<div class="form-group">
+									<input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar a nova palavra-passe" required>
+								</div>
+								@if ($errors->has('password_confirmation'))
+								<span class="invalid-feedback" style="display: block;" role="alert">
+									<strong>{{ $errors->first('password_confirmation') }}</strong>
+								</span>
+								@endif
+							</div>
+						</div>
+					</div>
+					<div class="card-footer ">
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<button type="submit" class="btn btn-primary btn-round">{{ __('Salvar Alterações') }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 @endsection
+
+@push('scripts')
+<script src="../../vendor/sweetalert/sweetalert.all.js"></script>
+
+
+<script>
+	//the confirm class that is being used in the delete button
+	$('.confirm').click(function(event) {
+
+		//This will choose the closest form to the button
+		var form = $(this).closest("form");
+
+		//don't let the form submit yet
+		event.preventDefault();
+
+		//configure sweetalert alert as you wish
+		Swal.fire({
+			title: 'Tem certeza que pretende eliminar?',
+			text: "",
+			cancelButtonText: "Não",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Sim, eliminar'
+		}).then((result) => {
+
+			//in case of deletion confirm then make the form submit
+			if (result.isConfirmed) {
+				form.submit();
+			}
+		})
+	});
+</script>
+@endpush

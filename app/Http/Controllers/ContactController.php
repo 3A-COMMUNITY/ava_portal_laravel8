@@ -20,6 +20,9 @@ class ContactController extends Controller
         if(Mail::to('ulaengenhariainformatica@gmail.com')->send(new contactMail($validated))){
             Alert::success('Email enviado com Sucesso', 'Entraremos em contacto em breve!');
             return redirect()->back();
+        }else{
+            Alert::error('Falha ao enviar o Email', 'Por favor, preencha novamente o formulário!');
+            return redirect()->back();
         }
     }
 }

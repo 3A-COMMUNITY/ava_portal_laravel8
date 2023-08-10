@@ -50,7 +50,7 @@
                         <!-- <h4 class="card-title">{{ __('Torne-se membro') }}</h4> -->
                     </div>
                     <div class="card-body ">
-                        <form class="form" method="POST" action="{{ route('associate.salvar') }}">
+                        <form class="form" method="POST" action="{{ route('associate.salvar') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">

@@ -321,8 +321,47 @@
   </section>
 
 
+<!-- Modal de doações -->
 
+<!-- Main modal -->
+<div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-2xl max-h-full ">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 ">
+            <!-- Modal header -->
+            <!-- <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Terms of Service
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="defaultModal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div> -->
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-white">
+                    Poderá fazer o seu donativo oferecendo medicação e protectores solares FPS 50+.
+                </p>
+                
+                <p class="text-base leading-relaxed text-gray-500 dark:text-white">
+                    Poderá fazer a sua doação em dinheiro. <br>
+                    Banco BAI <br>
+                    Conta: <b>197467655 10 001</b> <br>
+                    Iban: <b>AO06 0040 0000 9746 7655 1015 0</b>
+                </p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button data-modal-hide="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Fim da modal de doações -->
 
   <section id="doar" data-aos="fade-up" data-aos-duration="1000">
     <div class="bg-white">
@@ -343,7 +382,16 @@
 
             <div class="flex flex-col md:flex-row gap-x-5 mt-5">
               <a href="#sobre" class="inline-block text-center bg-[#fff]  font-semibold hover:bg-opacity-80 mt-3 px-14 sm:px-32 md:px-16 py-3 rounded-md text-black">Saber mais</a>
-              <a href="#" class="inline-block text-center bg-[#C25ED2]  font-semibold hover:bg-opacity-80 mt-3 px-14 sm:px-32 md:px-16 py-3 rounded-md text-white">Contribuir</a>
+              <!-- <a href="#" class="inline-block text-center bg-[#C25ED2]  font-semibold hover:bg-opacity-80 mt-3 px-14 sm:px-32 md:px-16 py-3 rounded-md text-white">Contribuir</a> -->
+
+
+<!-- Modal toggle -->
+<button data-modal-target="defaultModal" data-modal-toggle="defaultModal" class="inline-block text-center bg-[#C25ED2]  font-semibold hover:bg-opacity-80 mt-3 px-14 sm:px-32 md:px-16 py-3 rounded-md text-white" type="button">
+Contribuir
+</button>
+
+
+
 
             </div>
 
@@ -365,7 +413,7 @@
           <div class="flex mt-20">
 
             <!-- Component Start -->
-            <div class="w-full  md:max-w-screen-xl">
+            <div class="w-full  md:max-w-screen-xl dark:text-white">
               <button class="w-full focus:text-purple-700 border-b-2  border-gray-300 pb-6 text-left group focus:outline-none">
                 <div class="md:text-lg  font-semibold asa">
                   <h3 class="flex items-center">
@@ -375,7 +423,7 @@
                     O que é o Vitiligo?
                   </h3>
                 </div>
-                <div class="mt-3 hidden text-gray-700 group-focus:flex">
+                <div class="dark:text-white mt-3 hidden text-gray-700 group-focus:flex">
                   <p>O vitiligo é uma doença de pele crônica em que ocorre a perda da pigmentação,
                     resultando em manchas brancas ou descoloridas na pele.</p>
                 </div>
@@ -389,7 +437,7 @@
                     Existe cura para o vitiligo?
                   </h3>
                 </div>
-                <div class="mt-3 hidden text-gray-700 group-focus:flex">
+                <div class="dark:text-white mt-3 hidden text-gray-700 group-focus:flex">
                   <p>Atualmente, não há uma cura definitiva para o vitiligo, mas existem tratamentos
 disponíveis para ajudar a controlar a doença.</p>
                 </div>
@@ -403,7 +451,7 @@ disponíveis para ajudar a controlar a doença.</p>
                     Quais são as causas do vitiligo?
                   </h3>
                 </div>
-                <div class="mt-3 hidden text-gray-700 group-focus:flex">
+                <div class="dark:text-white mt-3 hidden text-gray-700 group-focus:flex">
                   <p>As causas exatas do vitiligo não são totalmente compreendidas, mas acredita-se que
 seja uma combinação de fatores genéticos, auto-imunes e ambientais.</p>
                 </div>
@@ -417,7 +465,7 @@ seja uma combinação de fatores genéticos, auto-imunes e ambientais.</p>
                     É possível prevenir o vitiligo?
                   </h3>
                 </div>
-                <div class="mt-3 hidden text-gray-700 group-focus:flex">
+                <div class="dark:text-white mt-3 hidden text-gray-700 group-focus:flex">
                   <p>Não há uma maneira comprovada de prevenir o vitiligo, uma vez que suas causas não
 são totalmente conhecidas. No entanto, medidas como evitar lesões na pele e proteger-
 se do sol podem ajudar a reduzir o risco de desenvolver a doença.</p>
@@ -432,7 +480,7 @@ se do sol podem ajudar a reduzir o risco de desenvolver a doença.</p>
                     O vitiligo pode ser confundido com outras doenças de pele?
                   </h3>
                 </div>
-                <div class="mt-3 hidden text-gray-700 group-focus:flex">
+                <div class="dark:text-white mt-3 hidden text-gray-700 group-focus:flex">
                   <p>O vitiligo pode ser confundido com outras condições de pele que causam
 despigmentação, como a pitiríase versicolor, a micose branca, entre outras. Um
 diagnóstico preciso deve ser feito por um dermatologista.</p>
@@ -506,10 +554,10 @@ diagnóstico preciso deve ser feito por um dermatologista.</p>
                             Telefone e email
                           </p>
                           <p class="text-neutral-500 dark:text-neutral-200">
-                            support@example.com
+                          associacaodosvitilindos-angola@gmail.com
                           </p>
                           <p class="text-neutral-500 dark:text-neutral-200">
-                            +1 234-567-89
+                          +244 947 977 251 
                           </p>
                         </div>
                       </div>
@@ -526,11 +574,9 @@ diagnóstico preciso deve ser feito por um dermatologista.</p>
                           <p class="mb-2 font-bold dark:text-white">
                             Redes sociais
                           </p>
+                          <a href="https://instagram.com/associacao_vitiligo?igshid=NTc4MTIwNjQ2YQ=="> associacao_vitiligo </a>  
                           <p class="text-neutral-500 dark:text-neutral-200">
-                            sales@example.com
-                          </p>
-                          <p class="text-neutral-500 dark:text-neutral-200">
-                            +1 234-567-89
+                          +244 997 230 647
                           </p>
                         </div>
                       </div>
@@ -588,7 +634,7 @@ diagnóstico preciso deve ser feito por um dermatologista.</p>
   </main>
 
  
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
 
   <script>
     // Others

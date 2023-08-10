@@ -31,6 +31,9 @@
                                     Nome
                                 </th>
                                 <th>
+                                    Área afectada
+                                </th>
+                                <th>
                                     Email
                                 </th>
                                 <th>
@@ -57,6 +60,9 @@
                                     </td>
                                     <td>
                                         {{ $associate->name }}
+                                    </td>
+                                    <td>
+                                        {{ $associate->areas_afectadas }}
                                     </td>
                                     <td>
                                         {{ $associate->email }}

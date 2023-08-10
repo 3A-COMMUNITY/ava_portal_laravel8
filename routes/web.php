@@ -31,7 +31,6 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 
 Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
@@ -41,6 +40,9 @@ Route::resource('posts', 'App\Http\Controllers\PostsController', ['except' => ['
 // =================== Associates ============================
 Route::resource('associates', 'App\Http\Controllers\AssociateController', ['except' => ['store']]);
 Route::get('associate/status/{id}', 'App\Http\Controllers\AssociateController@status')->name('associates.status.change');
+
+// =================== User - Admin ============================
+Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 
 });
 
