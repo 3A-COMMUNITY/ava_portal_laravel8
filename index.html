@@ -277,6 +277,17 @@
                   mais</button>
               </div>
             </div>
+            <div class="carousel-item">
+              <div
+                class="flex h-[400px] justify-end flex-col px-10 pb-10 text-white relative overflow-hidden rounded-xl"
+                style="background: linear-gradient(to top, black, transparent), url('images/posts/causas-tratamento.jpg'); background-size: cover;">
+                <h2 class="text-2xl font-bold">Palestra Escolar</h2>
+                <button
+                  onclick="openPost('Palestra Escolar', 'Ação dedicada a educar estudantes que o vitiligo não é contagioso e que o respeito é fundamental.', 'images/posts/causas-tratamento.jpg')"
+                  class="border rounded-full py-2 px-6 text-sm text-center w-32 mt-4 bg-white text-black font-semibold">Ver
+                  mais</button>
+              </div>
+            </div>
           </div>
           <div class="carousel-controls">
             <button id="prevButton" class="carousel-control text-sm">Anterior</button>
@@ -307,20 +318,51 @@
       <h1 class="tracking-tight mb-8 font-extrabold text-[#C25ED2] text-4xl uppercase">Contacte-nos</h1>
       <div
         class="rounded-lg bg-white px-6 py-12 shadow-xl border border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
-          <input type="text" class="mb-4 block w-full rounded border p-3" placeholder="Seu Nome" required />
-          <input type="email" class="mb-4 block w-full rounded border p-3" placeholder="Seu Email" required />
-          <textarea class="mb-4 block w-full rounded border p-3" rows="4" placeholder="Sua Mensagem"
-            required></textarea>
-          <button type="submit" class="bg-[#C25ED2] w-full py-3 rounded-md text-white font-bold">Enviar</button>
-        </form> -->
-        <div class="space-y-4">
-          <p class="font-bold">Telefone: <span class="font-normal text-gray-600">+244 947 977 251</span></p>
-          <p class="font-bold">Email: <span
-              class="font-normal text-gray-600">associacaodosvitilindos-angola@gmail.com</span></p>
-          <div class="w-full h-40 bg-gray-100 flex items-center justify-center border text-gray-400 rounded">Luanda,
-            Angola</div>
+
+        <!-- LADO ESQUERDO: CANAIS DE CONTACTO -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <i class="fas fa-phone-alt text-[#C25ED2] w-6 text-xl"></i>
+            <p class="font-bold">Telefone: <span class="font-normal text-gray-600">+244 947 977 251</span></p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fab fa-whatsapp text-green-500 w-6 text-2xl"></i>
+            <p class="font-bold">WhatsApp: <a
+                href="https://chat.whatsapp.com/H4EeQEnyFhwLv7Vi2Barx9?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnjKDbgDShWOhKyEZ6K8t7NBeyugYiTkVu8nRCGRHunsp05MRtjwZWkIsmChc_aem_7MDUuKJiK_Ke4gumTc-QYA"
+                target="_blank" class="font-normal text-gray-600 hover:text-[#C25ED2] hover:underline">Grupo "Associação
+                dos Vitilindos"</a></p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="envelope fas text-gray-500 w-6 text-xl"></i>
+            <p class="font-bold">Email: <span
+                class="font-normal text-gray-600">associacaodosvitilindos-angola@gmail.com</span></p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fab fa-instagram text-pink-600 w-6 text-2xl"></i>
+            <p class="font-bold">Instagram: <a href="https://www.instagram.com/associacao_vitiligo/" target="_blank"
+                class="font-normal text-gray-600 hover:text-[#C25ED2] hover:underline">@associacao_vitiligo</a></p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <i class="fab fa-facebook text-blue-600 w-6 text-2xl"></i>
+            <p class="font-bold">Facebook: <a href="https://www.facebook.com/100083336649103/mentions/" target="_blank"
+                class="font-normal text-gray-600 hover:text-[#C25ED2] hover:underline">Associação Vitiligo de Angola
+                AVA</a></p>
+          </div>
         </div>
+
+        <!-- LADO DIREITO: MAPA/LOCALIZAÇÃO -->
+        <div class="flex flex-col justify-between h-full">
+          <div
+            class="w-full h-full min-h-[180px] bg-gray-100 flex flex-col items-center justify-center border text-gray-400 rounded p-4">
+            <i class="fas fa-map-marker-alt text-red-500 text-3xl mb-2"></i>
+            <span class="text-gray-700 font-semibold">Luanda, Angola</span>
+          </div>
+        </div>
+
       </div>
     </section>
   </div>
@@ -471,6 +513,46 @@
         backdrop.forEach(b => b.addEventListener('click', () => menu.forEach(m => m.classList.toggle('hidden'))));
       }
     });
+
+    // Lógica do Carrossel de Destaques
+    const carouselInner = document.querySelector('.carousel-inner');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    let currentIndex = 0;
+    let slideWidth = window.innerWidth < 768 ? 100 : 50;
+
+    function updateCarousel() {
+      carouselInner.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex++;
+      const maxIndex = window.innerWidth < 768 ? carouselItems.length - 1 : carouselItems.length - 2;
+      if (currentIndex > maxIndex) {
+        currentIndex = 0;
+      }
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex--;
+      if (currentIndex < 0) {
+        const maxIndex = window.innerWidth < 768 ? carouselItems.length - 1 : carouselItems.length - 2;
+        currentIndex = maxIndex;
+      }
+      updateCarousel();
+    }
+
+    let intervalId = setInterval(nextSlide, 4000);
+
+    window.addEventListener('resize', () => {
+      slideWidth = window.innerWidth < 768 ? 100 : 50;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => { clearInterval(intervalId); prevSlide(); });
+    nextButton.addEventListener('click', () => { clearInterval(intervalId); nextSlide(); });
 
     // Fancybox Config
     $('[data-fancybox="gallery"]').fancybox({
