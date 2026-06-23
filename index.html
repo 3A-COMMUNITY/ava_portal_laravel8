@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Associação Vitiligo de Angola AVA</title>
+  <title>Associação Vitiligo de Angola - AVA</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -78,7 +78,7 @@
       #bghero {
         background-size: 350% !important;
         background: linear-gradient(rgba(0, 0, 0, 0.521), #5c1068),
-          url("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80") !important;
+          url("images/bg/BG1.jpg") !important;
         background-position: top !important;
         background-repeat: no-repeat;
       }
@@ -92,9 +92,9 @@
     <nav class="bg-white border-gray-200">
       <nav class="relative px-5 md:px-24 pt-4 pb-2 border-b flex justify-between items-center bg-white">
         <a class="text-3xl font-bold leading-none" href="#" onclick="showPage('home')">
-          <div
-            class="h-12 flex items-center justify-center font-black text-[#C25ED2] border-2 border-[#C25ED2] px-3 rounded">
-            AVA ANGOLA</div>
+          <div class="h-12 flex items-center justify-center font-black text-[#C25ED2] px-3 rounded">
+            <img src="images/logo.png" class="h-16" alt="">
+          </div>
         </a>
         <div class="lg:hidden">
           <button class="navbar-burger flex items-center text-[#C25ED2] p-3">
@@ -118,9 +118,11 @@
               onclick="showPage('home')">Contactos</a></li>
         </ul>
 
-        <a class="hidden text-sm lg:inline-block lg:ml-auto font-extrabold text-opacity-60 text-black hover:text-[#C25ED2] lg:mr-3 py-2 px-6"
-          href="#">Entrar</a>
-        <a href="#" class="px-5 py-2 text-[11.6pt] rounded-md bg-[#C25ED2] text-white lg:block hidden">Cadastrar-se</a>
+        <!-- <a class="hidden text-sm lg:inline-block lg:ml-auto font-extrabold text-opacity-60 text-black hover:text-[#C25ED2] lg:mr-3 py-2 px-6"
+          href="#">Entrar</a> -->
+        <a href="https://forms.gle/Dv5ffRaXGVg2xToX7"
+          class="px-5 py-2 text-[11.6pt] rounded-md bg-[#C25ED2] text-white lg:block hidden"
+          target="_blank">Increver-se</a>
       </nav>
 
       <div class="navbar-menu relative z-50 hidden">
@@ -128,7 +130,8 @@
         <nav
           class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
           <div class="flex items-center mb-8">
-            <div class="mr-auto font-black text-[#C25ED2] border-2 border-[#C25ED2] px-3 rounded">AVA ANGOLA</div>
+            <div class="mr-auto font-black text-[#C25ED2] border-2 border-[#C25ED2] px-3 rounded"> <img
+                src="images/logo.png" class="h-16" alt=""></div>
             <button class="navbar-close">
               <svg class="h-8 w-8 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -163,7 +166,7 @@
   <div id="page-home" class="page-view">
     <div class="w-full">
       <div id="bghero" class="w-full sm:rounded-bl-[200px] py-44 bg-center text-white px-10"
-        style="background: linear-gradient(rgba(0, 0, 0, 0.521),#5c1068), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;">
+        style="background: linear-gradient(rgba(0, 0, 0, 0.521),#5c1068), url('images/bg/BG1.jpg'); background-size: cover; background-position: center;">
         <div data-aos="fade-up" class="flex-col flex items-center justify-center">
           <h1 class="text-4xl text-center md:w-4/6 md:text-7xl tracking-tight leading-none font-extrabold">Luta contra o
             preconceito e a auto-aceitação</h1>
@@ -173,8 +176,9 @@
             <a href="#sobre"
               class="inline-block w-perso text-center bg-[#fff] font-semibold hover:bg-opacity-80 mt-3 px-14 md:px-16 py-3 rounded-md text-black">Saber
               mais</a>
-            <a href="#"
-              class="inline-block w-perso text-center bg-[#C25ED2] font-semibold hover:bg-opacity-80 mt-3 px-14 md:px-16 py-3 rounded-md text-white">Se
+            <a href="https://forms.gle/Dv5ffRaXGVg2xToX7"
+              class="inline-block w-perso text-center bg-[#C25ED2] font-semibold hover:bg-opacity-80 mt-3 px-14 md:px-16 py-3 rounded-md text-white"
+              target="_blank">Se
               inscrever</a>
           </div>
         </div>
@@ -189,10 +193,8 @@
             fins lucrativos criada para apoiar a aceitação e o suporte emocional e social.</p>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <img class="w-full rounded-lg object-cover h-60"
-            src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?auto=format&fit=crop&w=500&q=80">
-          <img class="w-full rounded-lg object-cover h-60 mt-6"
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80">
+          <img class="w-full rounded-lg object-cover h-80" src="images/about.jpg">
+          <img class="w-full rounded-lg object-cover h-80 mt-6" src="images/hand.jpg">
         </div>
       </div>
     </section>
@@ -205,46 +207,34 @@
 
       <div id="galeria-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="bg-white p-2 rounded-lg shadow">
-          <a href="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
-            data-fancybox="gallery" data-caption="Apoio Mútuo AVA">
-            <img class="hvr-float rounded w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&q=80">
+          <a href="images/111.jpeg" data-fancybox="gallery" data-caption="Apoio Mútuo AVA">
+            <img class="hvr-float rounded w-full h-64 object-cover" src="images/111.jpeg">
           </a>
         </div>
         <div class="bg-white p-2 rounded-lg shadow">
-          <a href="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
-            data-fancybox="gallery" data-caption="Palestras AVA">
-            <img class="hvr-float rounded w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80">
+          <a href="images/gallery(4).jpg" data-fancybox="gallery" data-caption="Palestras AVA">
+            <img class="hvr-float rounded w-full h-64 object-cover" src="images/gallery(4).jpg">
           </a>
         </div>
         <div class="bg-white p-2 rounded-lg shadow">
-          <a href="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
-            data-fancybox="gallery" data-caption="Encontros de Confraternização">
-            <img class="hvr-float rounded w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=500&q=80">
+          <a href="images/new3.jpg" data-fancybox="gallery" data-caption="Encontros de Confraternização">
+            <img class="hvr-float rounded w-full h-64 object-cover" src="images/new3.jpg">
           </a>
         </div>
 
         <div class="bg-white p-2 rounded-lg shadow extra-img hidden">
-          <a href="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80"
-            data-fancybox="gallery" data-caption="Campanha Social">
-            <img class="hvr-float rounded w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=500&q=80">
+          <a href="images/gallery(8).jpg" data-fancybox="gallery" data-caption="Campanha Social">
+            <img class="hvr-float rounded w-full h-64 object-cover" src="images/gallery(8).jpg">
           </a>
         </div>
         <div class="bg-white p-2 rounded-lg shadow extra-img hidden">
-          <a href="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
-            data-fancybox="gallery" data-caption="Workshop Informativo">
-            <img class="hvr-float rounded w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80">
+          <a href="images/gallery(6).jpg" data-fancybox="gallery" data-caption="Workshop Informativo">
+            <img class="hvr-float rounded w-full h-64 object-cover" src="images/gallery(6).jpg">
           </a>
         </div>
         <div class="bg-white p-2 rounded-lg shadow extra-img hidden">
-          <a href="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
-            data-fancybox="gallery" data-caption="Equipe AVA Angola">
-            <img class="hvr-float rounded w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=500&q=80">
+          <a href="images/hero.jpg" data-fancybox="gallery" data-caption="Equipe AVA Angola">
+            <img class="hvr-float rounded w-full h-64 object-cover" src="images/hero.jpg">
           </a>
         </div>
       </div>
@@ -268,10 +258,10 @@
             <div class="carousel-item">
               <div
                 class="flex h-[400px] justify-end flex-col px-10 pb-10 text-white relative overflow-hidden rounded-xl"
-                style="background: linear-gradient(to top, black, transparent), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80'); background-size: cover;">
+                style="background: linear-gradient(to top, black, transparent), url('images/posts/auto-aceitacao.png'); background-size: cover;">
                 <h2 class="text-2xl font-bold">Workshop de Autoestima</h2>
                 <button
-                  onclick="openPost('Workshop de Autoestima', 'Este workshop reuniu dezenas de pessoas em Luanda com o intuito de debater métodos psicológicos de superação, quebra de preconceito e a importância de aceitar as suas manchas com orgulho e amor próprio.', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80')"
+                  onclick="openPost('Workshop de Autoestima', 'Este workshop reuniu dezenas de pessoas em Luanda com o intuito de debater métodos psicológicos de superação, quebra de preconceito e a importância de aceitar as suas manchas com orgulho e amor próprio.', 'images/posts/auto-aceitacao.png')"
                   class="border rounded-full py-2 px-6 text-sm text-center w-32 mt-4 bg-white text-black font-semibold">Ver
                   mais</button>
               </div>
@@ -279,10 +269,10 @@
             <div class="carousel-item">
               <div
                 class="flex h-[400px] justify-end flex-col px-10 pb-10 text-white relative overflow-hidden rounded-xl"
-                style="background: linear-gradient(to top, black, transparent), url('https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=600&q=80'); background-size: cover;">
+                style="background: linear-gradient(to top, black, transparent), url('images/posts/dia-vitiligo-2.png'); background-size: cover;">
                 <h2 class="text-2xl font-bold">Campanha Protetor Solar</h2>
                 <button
-                  onclick="openPost('Campanha Protetor Solar', 'A pele com vitiligo necessita de proteção redobrada contra os raios UV. Conseguimos doar centenas de protetores de fator elevado para famílias e crianças carenciadas através dos nossos parceiros.', 'https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=800&q=80')"
+                  onclick="openPost('Campanha Protetor Solar', 'A pele com vitiligo necessita de proteção redobrada contra os raios UV. Conseguimos doar centenas de protetores de fator elevado para famílias e crianças carenciadas através dos nossos parceiros.', 'images/posts/dia-vitiligo-2.png')"
                   class="border rounded-full py-2 px-6 text-sm text-center w-32 mt-4 bg-white text-black font-semibold">Ver
                   mais</button>
               </div>
@@ -300,7 +290,7 @@
       <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div
           class="relative isolate overflow-hidden px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
-          style="background: linear-gradient(rgba(0, 0, 0, 0.771),#5c1068bd), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80'); background-size: cover;">
+          style="background: linear-gradient(rgba(0, 0, 0, 0.771),#5c1068bd), url('images/111.jpeg'); background-size: cover;">
           <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left">
             <h2 class="text-3xl font-bold text-white sm:text-4xl">Faça uma doação.</h2>
             <p class="mt-6 text-lg text-white text-opacity-80">Contribua para a distribuição de medicação e protetores
@@ -317,13 +307,13 @@
       <h1 class="tracking-tight mb-8 font-extrabold text-[#C25ED2] text-4xl uppercase">Contacte-nos</h1>
       <div
         class="rounded-lg bg-white px-6 py-12 shadow-xl border border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+        <!-- <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
           <input type="text" class="mb-4 block w-full rounded border p-3" placeholder="Seu Nome" required />
           <input type="email" class="mb-4 block w-full rounded border p-3" placeholder="Seu Email" required />
           <textarea class="mb-4 block w-full rounded border p-3" rows="4" placeholder="Sua Mensagem"
             required></textarea>
           <button type="submit" class="bg-[#C25ED2] w-full py-3 rounded-md text-white font-bold">Enviar</button>
-        </form>
+        </form> -->
         <div class="space-y-4">
           <p class="font-bold">Telefone: <span class="font-normal text-gray-600">+244 947 977 251</span></p>
           <p class="font-bold">Email: <span
@@ -343,38 +333,35 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-          <img class="w-full h-48 object-cover"
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500&q=80">
+          <img class="w-full h-48 object-cover" src="images/posts/auto-aceitacao.png">
           <div class="p-6">
             <h3 class="font-bold text-xl mb-2">Workshop de Autoestima</h3>
             <p class="text-gray-600 text-sm mb-4">Sessões interativas de suporte psicológico focado na valorização
               social.</p>
             <button
-              onclick="openPost('Workshop de Autoestima', 'Este workshop reuniu dezenas de pessoas em Luanda com o intuito de debater métodos de superação emocional.', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80')"
+              onclick="openPost('Workshop de Autoestima', 'Este workshop reuniu dezenas de pessoas em Luanda com o intuito de debater métodos de superação emocional.', 'images/posts/auto-aceitacao.png')"
               class="text-[#C25ED2] font-bold hover:underline text-sm">Ler artigo completo →</button>
           </div>
         </div>
         <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-          <img class="w-full h-48 object-cover"
-            src="https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=500&q=80">
+          <img class="w-full h-48 object-cover" src="images/posts/dia-vitiligo-2.png">
           <div class="p-6">
             <h3 class="font-bold text-xl mb-2">Campanha Protetor Solar</h3>
             <p class="text-gray-600 text-sm mb-4">Distribuição massiva de protetores solares cruciais para a proteção
               diária.</p>
             <button
-              onclick="openPost('Campanha Protetor Solar', 'A pele com vitiligo necessita de proteção redobrada contra os raios UV e queimaduras externas.', 'https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=800&q=80')"
+              onclick="openPost('Campanha Protetor Solar', 'A pele com vitiligo necessita de proteção redobrada contra os raios UV e queimaduras externas.', 'images/posts/dia-vitiligo-2.png')"
               class="text-[#C25ED2] font-bold hover:underline text-sm">Ler artigo completo →</button>
           </div>
         </div>
         <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
-          <img class="w-full h-48 object-cover"
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80">
+          <img class="w-full h-48 object-cover" src="images/posts/causas-tratamento.jpg">
           <div class="p-6">
             <h3 class="font-bold text-xl mb-2">Palestra Escolar</h3>
             <p class="text-gray-600 text-sm mb-4">Combate ao bullying e disseminação de informações corretas para
               jovens.</p>
             <button
-              onclick="openPost('Palestra Escolar', 'Ação dedicada a educar estudantes que o vitiligo não é contagioso e que o respeito é fundamental.', 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80')"
+              onclick="openPost('Palestra Escolar', 'Ação dedicada a educar estudantes que o vitiligo não é contagioso e que o respeito é fundamental.', 'images/posts/causas-tratamento.jpg')"
               class="text-[#C25ED2] font-bold hover:underline text-sm">Ler artigo completo →</button>
           </div>
         </div>
