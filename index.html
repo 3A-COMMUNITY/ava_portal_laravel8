@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Associação Vitiligo de Angola AVA</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    .hvr-float {
+      transition: transform 0.3s ease;
+    }
+
+    .hvr-float:hover {
+      transform: translateY(-8px);
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-item {
+      flex: 0 0 50%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-item {
+        flex: 0 0 100%;
+      }
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .carousel-control {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid white;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-control:hover {
+      background: white;
+      color: black;
+      opacity: 1 !important;
+    }
+
+    @media (max-width: 650px) {
+      .w-perso {
+        width: 280px !important;
+      }
+
+      #bghero {
+        background-size: 350% !important;
+        background: linear-gradient(rgba(0, 0, 0, 0.521), #5c1068),
+          url("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80") !important;
+        background-position: top !important;
+        background-repeat: no-repeat;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <header class="w-full bg-white z-50 sticky top-0 shadow-sm">
+    <nav class="bg-white border-gray-200">
+      <nav class="relative px-5 md:px-24 pt-4 pb-2 border-b flex justify-between items-center bg-white">
+        <a class="text-3xl font-bold leading-none" href="#" onclick="showPage('home')">
+          <div
+            class="h-12 flex items-center justify-center font-black text-[#C25ED2] border-2 border-[#C25ED2] px-3 rounded">
+            AVA ANGOLA</div>
+        </a>
+        <div class="lg:hidden">
+          <button class="navbar-burger flex items-center text-[#C25ED2] p-3">
+            <svg class="block h-8 w-8 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul
+          class="hidden absolute top-1/2 pt-1.5 left-1/2 items-center transform -translate-y-1/2 -translate-x-1/2 lg:flex gap-x-5 lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+          <li><a class="text-sm text-opacity-60 text-black font-extrabold hover:text-[#C25ED2]" href="#"
+              onclick="showPage('home')">Página inicial</a></li>
+          <li><a class="text-sm text-opacity-60 text-black font-extrabold hover:text-[#C25ED2]" href="#sobre"
+              onclick="showPage('home')">Sobre</a></li>
+          <li><a class="text-sm text-opacity-60 text-black font-extrabold hover:text-[#C25ED2]" href="#"
+              onclick="showPage('blog')">Todos os Posts</a></li>
+          <li><a class="text-sm text-opacity-60 text-black font-extrabold hover:text-[#C25ED2]" href="#doar"
+              onclick="showPage('home')">Doação</a></li>
+          <li><a class="text-sm text-opacity-60 text-black font-extrabold hover:text-[#C25ED2]" href="#contactos"
+              onclick="showPage('home')">Contactos</a></li>
+        </ul>
+
+        <a class="hidden text-sm lg:inline-block lg:ml-auto font-extrabold text-opacity-60 text-black hover:text-[#C25ED2] lg:mr-3 py-2 px-6"
+          href="#">Entrar</a>
+        <a href="#" class="px-5 py-2 text-[11.6pt] rounded-md bg-[#C25ED2] text-white lg:block hidden">Cadastrar-se</a>
+      </nav>
+
+      <div class="navbar-menu relative z-50 hidden">
+        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <nav
+          class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+          <div class="flex items-center mb-8">
+            <div class="mr-auto font-black text-[#C25ED2] border-2 border-[#C25ED2] px-3 rounded">AVA ANGOLA</div>
+            <button class="navbar-close">
+              <svg class="h-8 w-8 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul class="">
+              <li class="mb-1"><a
+                  class="block p-4 text-sm font-extrabold text-gray-400 hover:bg-green-50 hover:text-[#C25ED2]" href="#"
+                  onclick="showPage('home')">Página Inicial</a></li>
+              <li class="mb-1"><a
+                  class="block p-4 text-sm font-extrabold text-gray-400 hover:bg-green-50 hover:text-[#C25ED2]"
+                  href="#sobre" onclick="showPage('home')">Sobre</a></li>
+              <li class="mb-1"><a
+                  class="block p-4 text-sm font-extrabold text-gray-400 hover:bg-green-50 hover:text-[#C25ED2]" href="#"
+                  onclick="showPage('blog')">Todos os Posts</a></li>
+              <li class="mb-1"><a
+                  class="block p-4 text-sm font-extrabold text-gray-400 hover:bg-green-50 hover:text-[#C25ED2]"
+                  href="#doar" onclick="showPage('home')">Doação</a></li>
+              <li class="mb-1"><a
+                  class="block p-4 text-sm font-extrabold text-gray-400 hover:bg-green-50 hover:text-[#C25ED2]"
+                  href="#contactos" onclick="showPage('home')">Contactos</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </nav>
+  </header>
+
+  <div id="page-home" class="page-view">
+    <div class="w-full">
+      <div id="bghero" class="w-full sm:rounded-bl-[200px] py-44 bg-center text-white px-10"
+        style="background: linear-gradient(rgba(0, 0, 0, 0.521),#5c1068), url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;">
+        <div data-aos="fade-up" class="flex-col flex items-center justify-center">
+          <h1 class="text-4xl text-center md:w-4/6 md:text-7xl tracking-tight leading-none font-extrabold">Luta contra o
+            preconceito e a auto-aceitação</h1>
+          <p class="text-center md:w-3/6 text-white text-opacity-75 mt-2">Um sorriso de esperança, a recuperação da
+            auto-estima e da autoconfiança. "AUTO-ACEITAÇÃO" é o segredo.</p>
+          <div class="flex flex-col md:flex-row gap-x-5 mt-5">
+            <a href="#sobre"
+              class="inline-block w-perso text-center bg-[#fff] font-semibold hover:bg-opacity-80 mt-3 px-14 md:px-16 py-3 rounded-md text-black">Saber
+              mais</a>
+            <a href="#"
+              class="inline-block w-perso text-center bg-[#C25ED2] font-semibold hover:bg-opacity-80 mt-3 px-14 md:px-16 py-3 rounded-md text-white">Se
+              inscrever</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="sobre" class="pt-24 pb-20 px-5 md:px-24">
+      <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:px-6">
+        <div>
+          <h1 class="tracking-tight font-extrabold text-[#C25ED2] text-4xl uppercase">Sobre nós</h1>
+          <p class="text-lg text-black text-opacity-75 mt-2">Associação dos Vitilindos de Angola é uma organização sem
+            fins lucrativos criada para apoiar a aceitação e o suporte emocional e social.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <img class="w-full rounded-lg object-cover h-60"
+            src="https://images.unsplash.com/photo-1504151932400-72d4384f04b3?auto=format&fit=crop&w=500&q=80">
+          <img class="w-full rounded-lg object-cover h-60 mt-6"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500&q=80">
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 md:px-24 py-16 bg-gray-50">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-gray-900">Nossa Galeria</h2>
+        <p class="text-gray-500">Momentos marcantes das nossas ações e reuniões</p>
+      </div>
+
+      <div id="galeria-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-white p-2 rounded-lg shadow">
+          <a href="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80"
+            data-fancybox="gallery" data-caption="Apoio Mútuo AVA">
+            <img class="hvr-float rounded w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=500&q=80">
+          </a>
+        </div>
+        <div class="bg-white p-2 rounded-lg shadow">
+          <a href="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+            data-fancybox="gallery" data-caption="Palestras AVA">
+            <img class="hvr-float rounded w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80">
+          </a>
+        </div>
+        <div class="bg-white p-2 rounded-lg shadow">
+          <a href="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+            data-fancybox="gallery" data-caption="Encontros de Confraternização">
+            <img class="hvr-float rounded w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=500&q=80">
+          </a>
+        </div>
+
+        <div class="bg-white p-2 rounded-lg shadow extra-img hidden">
+          <a href="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80"
+            data-fancybox="gallery" data-caption="Campanha Social">
+            <img class="hvr-float rounded w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=500&q=80">
+          </a>
+        </div>
+        <div class="bg-white p-2 rounded-lg shadow extra-img hidden">
+          <a href="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+            data-fancybox="gallery" data-caption="Workshop Informativo">
+            <img class="hvr-float rounded w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80">
+          </a>
+        </div>
+        <div class="bg-white p-2 rounded-lg shadow extra-img hidden">
+          <a href="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
+            data-fancybox="gallery" data-caption="Equipe AVA Angola">
+            <img class="hvr-float rounded w-full h-48 object-cover"
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=500&q=80">
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <button id="btn-ver-mais-galeria" onclick="toggleGaleria()"
+          class="border border-[#C25ED2] text-[#C25ED2] rounded-full py-2 px-8 text-sm font-semibold hover:bg-[#C25ED2] hover:text-white transition">
+          Ver mais imagens
+        </button>
+      </div>
+    </section>
+
+    <section id="post">
+      <div class="md:rounded-tr-[200px] bg-[darkmagenta] mt-16 md:px-24 px-5 pb-20 pt-24">
+        <h1 class="tracking-tight font-extrabold text-white text-4xl uppercase">Atividades em Destaque</h1>
+        <p class="text-lg text-white md:w-3/6 text-opacity-75 mt-2">Veja os eventos mais recentes organizados pela nossa
+          associação.</p>
+
+        <div class="carousel-container mt-10">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <div
+                class="flex h-[400px] justify-end flex-col px-10 pb-10 text-white relative overflow-hidden rounded-xl"
+                style="background: linear-gradient(to top, black, transparent), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80'); background-size: cover;">
+                <h2 class="text-2xl font-bold">Workshop de Autoestima</h2>
+                <button
+                  onclick="openPost('Workshop de Autoestima', 'Este workshop reuniu dezenas de pessoas em Luanda com o intuito de debater métodos psicológicos de superação, quebra de preconceito e a importância de aceitar as suas manchas com orgulho e amor próprio.', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80')"
+                  class="border rounded-full py-2 px-6 text-sm text-center w-32 mt-4 bg-white text-black font-semibold">Ver
+                  mais</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="flex h-[400px] justify-end flex-col px-10 pb-10 text-white relative overflow-hidden rounded-xl"
+                style="background: linear-gradient(to top, black, transparent), url('https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=600&q=80'); background-size: cover;">
+                <h2 class="text-2xl font-bold">Campanha Protetor Solar</h2>
+                <button
+                  onclick="openPost('Campanha Protetor Solar', 'A pele com vitiligo necessita de proteção redobrada contra os raios UV. Conseguimos doar centenas de protetores de fator elevado para famílias e crianças carenciadas através dos nossos parceiros.', 'https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=800&q=80')"
+                  class="border rounded-full py-2 px-6 text-sm text-center w-32 mt-4 bg-white text-black font-semibold">Ver
+                  mais</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button id="prevButton" class="carousel-control text-sm">Anterior</button>
+            <button id="nextButton" class="carousel-control text-sm">Próximo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="doar" class="py-16">
+      <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div
+          class="relative isolate overflow-hidden px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+          style="background: linear-gradient(rgba(0, 0, 0, 0.771),#5c1068bd), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80'); background-size: cover;">
+          <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-24 lg:text-left">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">Faça uma doação.</h2>
+            <p class="mt-6 text-lg text-white text-opacity-80">Contribua para a distribuição de medicação e protetores
+              solares.</p>
+            <button onclick="toggleModal()"
+              class="inline-block bg-[#C25ED2] font-semibold mt-5 px-10 py-3 rounded-md text-white">Contribuir
+              Agora</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactos" class="bg-white py-16 px-5 md:px-24">
+      <h1 class="tracking-tight mb-8 font-extrabold text-[#C25ED2] text-4xl uppercase">Contacte-nos</h1>
+      <div
+        class="rounded-lg bg-white px-6 py-12 shadow-xl border border-gray-100 grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+          <input type="text" class="mb-4 block w-full rounded border p-3" placeholder="Seu Nome" required />
+          <input type="email" class="mb-4 block w-full rounded border p-3" placeholder="Seu Email" required />
+          <textarea class="mb-4 block w-full rounded border p-3" rows="4" placeholder="Sua Mensagem"
+            required></textarea>
+          <button type="submit" class="bg-[#C25ED2] w-full py-3 rounded-md text-white font-bold">Enviar</button>
+        </form>
+        <div class="space-y-4">
+          <p class="font-bold">Telefone: <span class="font-normal text-gray-600">+244 947 977 251</span></p>
+          <p class="font-bold">Email: <span
+              class="font-normal text-gray-600">associacaodosvitilindos-angola@gmail.com</span></p>
+          <div class="w-full h-40 bg-gray-100 flex items-center justify-center border text-gray-400 rounded">Luanda,
+            Angola</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <div id="page-blog" class="page-view hidden px-5 md:px-24 py-16">
+    <div class="max-w-screen-xl mx-auto">
+      <h1 class="text-4xl font-extrabold text-[#C25ED2] uppercase mb-2">Todas as Atividades & Publicações</h1>
+      <p class="text-gray-600 mb-10">Acompanhe detalhadamente todo o histórico de publicações da AVA Angola.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+          <img class="w-full h-48 object-cover"
+            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500&q=80">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Workshop de Autoestima</h3>
+            <p class="text-gray-600 text-sm mb-4">Sessões interativas de suporte psicológico focado na valorização
+              social.</p>
+            <button
+              onclick="openPost('Workshop de Autoestima', 'Este workshop reuniu dezenas de pessoas em Luanda com o intuito de debater métodos de superação emocional.', 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80')"
+              class="text-[#C25ED2] font-bold hover:underline text-sm">Ler artigo completo →</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+          <img class="w-full h-48 object-cover"
+            src="https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=500&q=80">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Campanha Protetor Solar</h3>
+            <p class="text-gray-600 text-sm mb-4">Distribuição massiva de protetores solares cruciais para a proteção
+              diária.</p>
+            <button
+              onclick="openPost('Campanha Protetor Solar', 'A pele com vitiligo necessita de proteção redobrada contra os raios UV e queimaduras externas.', 'https://images.unsplash.com/photo-1473649035226-1173787b3af9?auto=format&fit=crop&w=800&q=80')"
+              class="text-[#C25ED2] font-bold hover:underline text-sm">Ler artigo completo →</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+          <img class="w-full h-48 object-cover"
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=80">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Palestra Escolar</h3>
+            <p class="text-gray-600 text-sm mb-4">Combate ao bullying e disseminação de informações corretas para
+              jovens.</p>
+            <button
+              onclick="openPost('Palestra Escolar', 'Ação dedicada a educar estudantes que o vitiligo não é contagioso e que o respeito é fundamental.', 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80')"
+              class="text-[#C25ED2] font-bold hover:underline text-sm">Ler artigo completo →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="page-post-detail" class="page-view hidden px-5 md:px-24 py-16">
+    <div class="max-w-3xl mx-auto bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+      <button onclick="showPage('blog')" class="text-[#C25ED2] font-bold mb-6 block hover:underline">← Voltar para todos
+        os posts</button>
+      <img id="detail-img" class="w-full h-[400px] object-cover rounded-lg mb-8" src="">
+      <h1 id="detail-title" class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4"></h1>
+      <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
+        <span><i class="far fa-calendar-alt"></i> Junho, 2026</span>
+        <span><i class="far fa-user"></i> Autor: AVA Angola</span>
+      </div>
+      <p id="detail-content" class="text-lg text-gray-700 leading-relaxed"></p>
+    </div>
+  </div>
+
+
+  <div id="defaultModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow max-w-xl w-full p-6 space-y-4">
+      <div class="flex justify-between items-center border-b pb-2">
+        <h3 class="text-xl font-bold text-gray-900">Como Contribuir</h3>
+        <button onclick="toggleModal()" class="text-gray-400 text-2xl font-bold">&times;</button>
+      </div>
+      <p class="text-gray-600">Poderá apoiar os membros doando protetores solares FPS 50+ ou por transferência:</p>
+      <div class="bg-purple-50 p-4 rounded text-sm font-mono border">
+        <b>Banco BAI</b><br>Conta: 197467655 10 001<br>IBAN: AO06 0040 0000 9746 7655 1015 0
+      </div>
+      <div class="flex justify-end pt-2">
+        <button onclick="toggleModal()" class="text-white bg-[#C25ED2] px-6 py-2 rounded">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="p-8 bg-purple-100 text-center mt-20">
+    <span class="text-sm text-gray-600">© 2026 AVA Angola. Todos os direitos reservados.</span>
+  </footer>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+  <script>
+    AOS.init();
+
+    // Sistema SPA Simples (Navegação entre abas sem recarregar a página)
+    function showPage(pageId) {
+      // Oculta todas as telas
+      document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+      // Exibe a tela desejada
+      document.getElementById('page-' + pageId).classList.remove('hidden');
+      // Rola para o topo automaticamente
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Função para abrir os detalhes de um post de forma dinâmica
+    function openPost(title, content, imgSrc) {
+      document.getElementById('detail-title').innerText = title;
+      document.getElementById('detail-content').innerText = content;
+      document.getElementById('detail-img').src = imgSrc;
+      showPage('post-detail');
+    }
+
+    // Lógica da Galeria: Revelar mais imagens
+    let galeriaExpandida = false;
+    function toggleGaleria() {
+      const extraImages = document.querySelectorAll('.extra-img');
+      const btn = document.getElementById('btn-ver-mais-galeria');
+
+      galeriaExpandida = !galeriaExpandida;
+
+      extraImages.forEach(img => {
+        if (galeriaExpandida) {
+          img.classList.remove('hidden');
+        } else {
+          img.classList.add('hidden');
+        }
+      });
+
+      btn.innerText = galeriaExpandida ? "Mostrar menos" : "Ver mais imagens";
+    }
+
+    // Modal de Doações
+    function toggleModal() {
+      document.getElementById('defaultModal').classList.toggle('hidden');
+    }
+
+    // Hamburguer menu mobile
+    document.addEventListener('DOMContentLoaded', function () {
+      const burger = document.querySelectorAll('.navbar-burger');
+      const menu = document.querySelectorAll('.navbar-menu');
+      const close = document.querySelectorAll('.navbar-close');
+      const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+      if (burger.length && menu.length) {
+        burger.forEach(b => b.addEventListener('click', () => menu.forEach(m => m.classList.toggle('hidden'))));
+      }
+      if (close.length) {
+        close.forEach(c => c.addEventListener('click', () => menu.forEach(m => m.classList.toggle('hidden'))));
+      }
+      if (backdrop.length) {
+        backdrop.forEach(b => b.addEventListener('click', () => menu.forEach(m => m.classList.toggle('hidden'))));
+      }
+    });
+
+    // Fancybox Config
+    $('[data-fancybox="gallery"]').fancybox({
+      buttons: ["zoom", "thumbs", "close"],
+      loop: true
+    });
+  </script>
+</body>
+
+</html>
