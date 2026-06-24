@@ -92,13 +92,6 @@
         width: 280px !important;
       }
 
-      #bghero {
-        background-size: 350% !important;
-        background: linear-gradient(rgba(0, 0, 0, 0.521), #5c1068),
-          url("images/bg/BG1.jpg") !important;
-        background-position: top !important;
-        background-repeat: no-repeat;
-      }
     }
   </style>
 </head>
@@ -181,10 +174,14 @@
   </header>
 
   <div id="page-home" class="page-view">
-    <div class="w-full">
-      <div id="bghero"
-        class="w-full sm:rounded-bl-[200px] py-20 md:py-44 bg-center text-white px-10 bg-cover bg-center md:bg-center"
-        style="background: linear-gradient(rgba(0, 0, 0, 0.521),#5c1068), url('images/bg/BG1.jpg'); background-size: cover; background-position: center;">
+    <section id="bghero"
+      class="relative min-h-screen md:min-h-[85vh] xl:min-h-[90vh] overflow-hidden sm:rounded-bl-[200px]">
+
+      <img src="images/bg/BG1.jpg" alt="Membros da associação" class="absolute inset-0  object-cover w-full h-full">
+
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-[#5c1068]/90"></div>
+
+      <div class="relative z-10 py-20 md:py-44 lg:py-64 bg-cover bg-center text-white px-10">
         <div data-aos="fade-up" class="flex-col flex items-center justify-center">
           <h1 class="text-4xl text-center md:w-4/6 md:text-7xl tracking-tight leading-none font-extrabold">Luta contra o
             preconceito e a auto-aceitação</h1>
@@ -201,7 +198,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <section id="sobre" class="pt-24 pb-20 px-5 md:px-24">
       <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:px-6">
