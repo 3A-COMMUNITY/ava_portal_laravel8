@@ -205,7 +205,16 @@
         <div>
           <h1 class="tracking-tight font-extrabold text-[#C25ED2] text-4xl uppercase">Sobre nós</h1>
           <p class="text-lg text-black text-opacity-75 mt-2">Associação dos Vitilindos de Angola é uma organização sem
-            fins lucrativos criada para apoiar a aceitação e o suporte emocional e social.</p>
+            fins lucrativos, com vocação e inspiração no propósito de apoiar todos os membros e não só a encontrarem
+            apoio incondicional dentro daquilo que são as nossas limitações.</p>
+          <div class="flex gap-x-4 flex-col gap-y-4 mt-10">
+            <span class="text-start font-medium text-[#C25ED2] text-md uppercase tracking-wider">Missão</span>
+            <div class="py-4 rounded-xl px-8 text-center transition-all text-base bg-gray-50 border border-gray-100">
+              Promover a consciencialização das pessoas sobre a doença.</div>
+            <div class="py-4 rounded-xl px-8 text-center transition-all text-base bg-gray-50 border border-gray-100">
+              Ajudar portadores de vitiligo e seus familiares directos a encontrarem o apoio
+              no acesso ao tratamento da doença.</div>
+          </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <img class="w-full rounded-lg object-cover h-80" src="images/about.jpg">
@@ -325,6 +334,51 @@
               class="inline-block bg-[#C25ED2] font-semibold mt-5 px-10 py-3 rounded-md text-white">Contribuir
               Agora</button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 px-5 md:px-24">
+      <div class="mx-auto max-w-screen-xl">
+        <h1 class="tracking-tight mb-8 font-extrabold text-[#C25ED2] text-4xl uppercase">Perguntas Frequentes</h1>
+        <div class="w-full md:max-w-screen-xl dark:text-white space-y-6">
+
+          <button
+            class="w-full focus:text-purple-700 border-b-2 border-gray-300 pb-6 text-left group focus:outline-none"
+            onclick="toggleFaq(this)">
+            <h3 class="flex items-center md:text-lg font-semibold text-black">
+              <span class="mr-2 text-gray-500">?</span> O que é o Vitiligo?
+            </h3>
+            <div class="mt-3 hidden text-gray-700">
+              <p>O vitiligo é uma doença de pele crônica em que ocorre a perda da pigmentação, resultando em manchas
+                brancas ou descoloridas na pele.</p>
+            </div>
+          </button>
+
+          <button
+            class="w-full focus:text-purple-700 border-b-2 border-gray-300 pb-6 text-left group focus:outline-none"
+            onclick="toggleFaq(this)">
+            <h3 class="flex items-center md:text-lg font-semibold text-black">
+              <span class="mr-2 text-gray-500">?</span> Existe cura para o vitiligo?
+            </h3>
+            <div class="mt-3 hidden text-gray-700">
+              <p>Atualmente, não há uma cura definitiva para o vitiligo, mas existem tratamentos disponíveis para ajudar
+                a controlar a doença.</p>
+            </div>
+          </button>
+
+          <button
+            class="w-full focus:text-purple-700 border-b-2 border-gray-300 pb-6 text-left group focus:outline-none"
+            onclick="toggleFaq(this)">
+            <h3 class="flex items-center md:text-lg font-semibold text-black">
+              <span class="mr-2 text-gray-500">?<i class="fa fa-circle-dot"></i></span> O vitiligo é contagioso?
+            </h3>
+            <div class="mt-3 hidden text-gray-700">
+              <p>Não. O vitiligo não é uma doença contagiosa e não pode ser transmitido por contacto físico, partilha de
+                objetos ou convivência com outras pessoas.</p>
+            </div>
+          </button>
+
         </div>
       </div>
     </section>
@@ -528,6 +582,13 @@
         backdrop.forEach(b => b.addEventListener('click', () => menu.forEach(m => m.classList.toggle('hidden'))));
       }
     });
+
+    // Funcionalidade das Perguntas Frequentes (FAQ) Accordion
+    function toggleFaq(button) {
+      const content = button.querySelector('div');
+      content.classList.toggle('hidden');
+      content.classList.toggle('flex');
+    }
 
     // Lógica do Carrossel de Destaques
     const carouselInner = document.querySelector('.carousel-inner');
